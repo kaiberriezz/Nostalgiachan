@@ -7,7 +7,7 @@
         <meta name="author" content="Anon">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="shortcut icon" href="favicon.ico">
-        <title>Openchan</title>
+        <title>SFWchan</title>
         <script defer src="userstyles.js"></script>
         <link rel="stylesheet" href="styles/base.css">
     </head>
@@ -35,13 +35,12 @@
                     <table>
                     <tr>
                     <td class="top">
-                    <b>About Openchan</b>
+                    <b>About SFWchan</b>
                     </td>
                     </tr>
                     <tr>
                     <td>
-                    Openchan is the free and open source imageboard software that dosent require a database.
-                    </td>
+                    SFWchan is... well, safe for work! a kid friendly place for anyone to post on (having to login first) and we used Openchan for reference :3
                     </tr>
                     </table>
 
@@ -105,4 +104,5 @@
         ?></div>
         
     </body>
+
 </html>
