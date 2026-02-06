@@ -1,128 +1,232 @@
-body {
-    font-size: 10pt;
-    margin: 0px;
+/* Cute / Kid-friendly theme for Nostalgiachan */
+
+:root{
+    --bg: #fffaf6;        /* soft cream background */
+    --card: #ffffff;      /* card background */
+    --muted: #7a7a86;     /* muted text */
+    --text: #2b2b2f;      /* main text */
+    --accent: #ff7ab6;    /* pink accent */
+    --accent2: #7ad3ff;   /* sky accent */
+    --accent3: #ffd47a;   /* warm yellow */
+    --shadow: 0 6px 18px rgba(43,43,47,0.06);
 }
+
+* {box-sizing: border-box;}
+
+/* Friendly base */
+body {
+    font-family: "Comic Sans MS", "Comic Neue", "Trebuchet MS", "Segoe UI", system-ui, -apple-system, "Helvetica Neue", Arial, sans-serif;
+    font-size: 14px;
+    line-height: 1.45;
+    margin: 0;
+    color: var(--text);
+    background: linear-gradient(180deg, var(--bg) 0%, #fffefc 100%);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Links with playful color */
 a {
+    color: var(--accent);
     text-decoration: none;
+    font-weight: 700;
+    transition: color 150ms ease, transform 120ms ease;
 }
 a:hover {
-    text-decoration: none;
+    color: var(--accent2);
+    text-decoration: underline;
+    transform: translateY(-1px);
 }
+
+/* Small '>' marker styled for cuteness */
 gt::before {
-    content: "> ";
+    content: "❯ ";
+    color: var(--accent3);
+    font-weight: 900;
+    font-size: 1.05em;
 }
+
+/* Navigation and header cards */
+#nav, #head, .center {
+    max-width: 720px;
+    margin: 1.25rem auto;
+    padding: 12px;
+    background: linear-gradient(180deg, rgba(255,255,255,0.9), rgba(255,255,255,0.95));
+    border-radius: 14px;
+    box-shadow: var(--shadow);
+    border: 1px solid rgba(0,0,0,0.03);
+}
+
 #nav {
-    padding: 5px;
-    font-size: 9pt;
-    display: block;
+    font-size: 13px;
+    padding: 10px 14px;
+    text-align: center;
 }
+
+/* Header specifics */
 #head {
-    display: block;
-    text-align: -webkit-center;
-    max-width: 525px;
-    margin: auto;
-    margin-bottom: 3em;
-    padding: 5px;
+    text-align: center;
+    margin-bottom: 2rem;
 }
 #head .motdtop {
-    font-size: 11px;
-    margin-top: 16px;
+    font-size: 13px;
+    margin-top: 10px;
     text-align: left;
     display: block;
+    color: var(--muted);
 }
 #head table {
     width: 100%;
     margin-bottom: 0.75em;
 }
-#content table {
-    width: 100%;
-    margin-bottom: 0.75em;
-}
-.center {
-    display: block;
-    text-align: -webkit-center;
-    max-width: 525px;
-    margin: auto;
-    margin-bottom: 3em;
-    padding: 5px;
-}
+
+/* Content area */
 #content {
-    padding: 5px;
+    padding: 12px;
+    max-width: 720px;
+    margin: 0 auto 2rem;
 }
-input {
-    padding: 5px;
-    border-radius: 0px;
-    margin-bottom: 5px;
+
+/* Form controls — bigger, rounder, friendlier */
+input, textarea, select, button {
+    padding: 10px 12px;
+    border-radius: 10px;
+    border: 1px solid rgba(0,0,0,0.08);
+    margin-bottom: 8px;
+    background: #fff;
+    font-size: 14px;
+    outline: none;
+    transition: box-shadow 120ms ease, transform 80ms ease;
 }
+input:focus, textarea:focus, select:focus {
+    box-shadow: 0 6px 18px rgba(122,122,134,0.07), 0 0 0 4px rgba(122,122,134,0.06);
+    transform: translateY(-1px);
+}
+
+/* Buttons */
+input[type="submit"], button, .button {
+    background: linear-gradient(180deg, var(--accent) 0%, #ff5fa2 100%);
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 10px 14px;
+    border-radius: 12px;
+    font-weight: 800;
+    box-shadow: 0 8px 18px rgba(255,122,182,0.12);
+}
+input[type="submit"]:hover, button:hover, .button:hover {
+    filter: brightness(1.03);
+    transform: translateY(-2px);
+}
+
+/* Banner centering fix (float:center is invalid) */
 #banner {
     display: block;
-    float: center;
+    margin: 18px auto;
     width: 270px;
-    margin-top: 30px;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
 }
+
+/* Remove harsh hr */
 hr {
     border: none;
+    height: 1px;
+    background: linear-gradient(90deg, rgba(255,122,182,0.2), rgba(122,211,255,0.18));
+    margin: 12px 0;
+    border-radius: 8px;
 }
-.left {
-    text-align: left;
-    float: left;
-    display: inline-block;
-}
-.right {
-    text-align: right;
-    float: right;
-    display: inline-block;
-}
+
+/* Float helpers */
+.left { text-align: left; float: left; display: inline-block; }
+.right { text-align: right; float: right; display: inline-block; }
+
+/* Tables: soft cards with spacing */
 table {
-    text-align: left;
-    position: relative;
-    border-collapse: collapse; 
-    padding: 0px;
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0 10px; /* vertical spacing between rows */
 }
 tr {
-    margin: 0px;
-    padding: 0px;
+    margin: 0;
+    padding: 0;
 }
 td {
-    padding:0px;
-    padding: 5px;
+    padding: 10px;
 }
-td a {
-    font-weight: bolder;
-}
-td a:hover {
-    text-decoration: underline;
+td a { font-weight: 800; color: var(--accent); }
+td a:hover { text-decoration: underline; }
+
+/* Card-like rows */
+tr > td {
+    background: linear-gradient(180deg, var(--card), #fff);
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+    border: 1px solid rgba(0,0,0,0.03);
 }
 
-@media only screen and (max-device-width: 480px) {
-    #nav {
-        padding: 5px;
-        font-size: 9pt;
-        display: block;
-        box-shadow: none;
-    }
-    #content {
-        display: block;
-        text-align: -webkit-center;
-    }
-}
-#pageparam {
-    display: none;
-}
-
-textarea {        
-    padding: 5px;
-    border-radius: 0px;
-    margin-bottom: 5px;
-    width: 75%;
-}
+/* Images fill the card but stay cute (rounded) */
 table img {
     width: 100%;
+    display: block;
+    border-radius: 10px;
+    object-fit: cover;
 }
-#head h1,h2,h3 {
-    letter-spacing: -0.06ch;
+
+/* Headings tighter, slightly playful */
+#head h1, #head h2, #head h3 {
+    letter-spacing: -0.03ch;
+    margin: 0.25rem 0;
 }
+
+/* Links that point to "overchan" or similar get a pill look */
 .overchanlink {
-    font-weight: bold;
+    display: inline-block;
+    background: linear-gradient(90deg, rgba(122,211,255,0.12), rgba(255,218,122,0.08));
+    padding: 6px 10px;
+    border-radius: 999px;
+    font-weight: 800;
     margin-right: 10px;
+    color: var(--accent2);
 }
+
+/* Inputs and textarea width adjustments */
+input { width: 95%; }
+textarea {
+    width: 95%;
+    min-height: 120px;
+    resize: vertical;
+}
+
+/* Small device adjustments */
+@media only screen and (max-device-width: 480px), only screen and (max-width: 640px) {
+    #nav, #head, #content, .center {
+        margin: 12px;
+        padding: 10px;
+        max-width: calc(100% - 24px);
+        box-shadow: none;
+    }
+    #content { text-align: center; }
+    input, textarea, button { width: 100%; }
+    table img { border-radius: 8px; }
+}
+
+/* Accessibility: focus ring for keyboard users */
+:focus {
+    outline: 3px solid rgba(122,211,255,0.18);
+    outline-offset: 2px;
+}
+
+/* Cute small decorations */
+.small-note {
+    display: inline-block;
+    background: rgba(255,250,240,0.8);
+    padding: 6px 8px;
+    border-radius: 8px;
+    color: var(--muted);
+    font-size: 0.9em;
+}
+
+/* Keep page param hidden as original */
+#pageparam { display: none; }
